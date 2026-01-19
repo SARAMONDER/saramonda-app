@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ครัว | Saramondā Kitchen Display</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-card-hover: #1e2a4a;
+            --accent: #c41e3a;
+            --accent-light: #e8354f;
+            --green: #22c55e;
+            --yellow: #f59e0b;
+            --blue: #3b82f6;
+            --purple: #8b5cf6;
+            --text-white: #ffffff;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Thai', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .kitchen-header {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .kitchen-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .kitchen-title h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .kitchen-title .icon {
+            font-size: 2rem;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .stat-item.pending .stat-value {
+            color: var(--yellow);
+        }
+
+        .stat-item.preparing .stat-value {
+            color: var(--purple);
+        }
+
+        .stat-item.ready .stat-value {
+            color: var(--green);
+        }
+
+        .current-time {
+            font-size: 2rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Main Content */
+        .kitchen-main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            min-height: calc(100vh - 100px);
+        }
+
+        /* Column Styles */
+        .order-column {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+        }
+
+        .column-header.pending {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.1) 100%);
+        }
+
+        .column-header.preparing {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+
+        .column-header.ready {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%);
+        }
+
+        .column-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .column-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .orders-list {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Order Card */
+        .order-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .order-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .order-card.new {
+            animation: pulse 1s ease-in-out 3;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(196, 30, 58, 0);
+            }
+        }
+
+        .order-card.priority-high {
+            border-color: var(--accent);
+        }
+
+        .order-card.priority-rush {
+            border-color: var(--accent);
+            animation: rushGlow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes rushGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(196, 30, 58, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(196, 30, 58, 0.6);
+            }
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .order-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .order-time {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .order-time.urgent {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .order-body {
+            padding: 15px;
+        }
+
+        .order-items {
+            margin-bottom: 12px;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-qty {
+            background: var(--accent);
+            color: white;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 500;
+        }
+
+        .item-size {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .order-customer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .order-notes {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 3px solid var(--yellow);
+            padding: 10px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .order-footer {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .action-btn.primary {
+            background: var(--green);
+            color: white;
+        }
+
+        .action-btn.primary:hover {
+            background: #16a34a;
+            transform: scale(1.02);
+        }
+
+        .action-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-white);
+        }
+
+        .action-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Empty State */
+        .empty-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        /* Notification Toast */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            animation: slideIn 0.3s ease;
+            min-width: 300px;
+        }
+
+        .toast.success {
+            border-left: 4px solid var(--green);
+        }
+
+        .toast.warning {
+            border-left: 4px solid var(--yellow);
+        }
+
+        .toast.error {
+            border-left: 4px solid var(--accent);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .toast-icon {
+            font-size: 1.5rem;
+        }
+
+        .toast-content {
+            flex: 1;
+        }
+
+        .toast-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .toast-message {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .toast-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Sound Toggle */
+        .sound-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 15px;
+            color: var(--text-white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+        }
+
+        .sound-toggle.muted {
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .kitchen-main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .kitchen-main {
+                grid-template-columns: 1fr;
+            }
+
+            .header-stats {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="kitchen-header">
+        <div class="kitchen-title">
+            <span class="icon">👨‍🍳</span>
+            <div>
+                <h1>Kitchen Display</h1>
+            </div>
+        </div>
+
+        <div class="header-stats">
+            <div class="stat-item pending">
+                <div class="stat-value" id="pendingCount">0</div>
+                <div class="stat-label">รอยืนยัน</div>
+            </div>
+            <div class="stat-item preparing">
+                <div class="stat-value" id="preparingCount">0</div>
+                <div class="stat-label">กำลังเตรียม</div>
+            </div>
+            <div class="stat-item ready">
+                <div class="stat-value" id="readyCount">0</div>
+                <div class="stat-label">พร้อมรับ</div>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <button class="sound-toggle" id="soundToggle">
+                <span id="soundIcon">🔔</span>
+                <span>เสียงเตือน</span>
+            </button>
+            <div class="current-time" id="currentTime">--:--</div>
+        </div>
+    </header>
+
+    <main class="kitchen-main">
+        <!-- Pending Orders Column -->
+        <div class="order-column">
+            <div class="column-header pending">
+                <div class="column-title">
+                    <span>⏳</span>
+                    <span>รอยืนยัน</span>
+                </div>
+                <span class="column-count" id="pendingColumnCount">0</span>
+            </div>
+            <div class="orders-list" id="pendingOrders">
+                <div class="empty-column">
+                    <div class="empty-icon">✨</div>
+                    <div>ไม่มีออเดอร์รอยืนยัน</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preparing Orders Column -->
+        <div class="order-column">
+            <div class="column-header preparing">
+                <div class="column-title">
+                    <span>🍳</span>
+                    <span>กำลังเตรียม</span>
+                </div>
+                <span class="column-count" id="preparingColumnCount">0</span>
+            </div>
+            <div class="orders-list" id="preparingOrders">
+                <div class="empty-column">
+                    <div class="empty-icon">🍽️</div>
+                    <div>ไม่มีออเดอร์กำลังเตรียม</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ready Orders Column -->
+        <div class="order-column">
+            <div class="column-header ready">
+                <div class="column-title">
+                    <span>✅</span>
+                    <span>พร้อมรับ</span>
+                </div>
+                <span class="column-count" id="readyColumnCount">0</span>
+            </div>
+            <div class="orders-list" id="readyOrders">
+                <div class="empty-column">
+                    <div class="empty-icon">📦</div>
+                    <div>ไม่มีออเดอร์พร้อมรับ</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="auth-guard.js"></script>
+    <script src="api-client.js"></script>
+    <script>
+        // Protect this page - require kitchen role
+        // Prevent infinite redirect loop
+        const redirectKey = 'kitchen_redirect_count';
+        const redirectCount = parseInt(sessionStorage.getItem(redirectKey) || '0');
+
+        if (redirectCount > 2) {
+            // Too many redirects, clear everything and show error
+            console.error('🔴 Redirect loop detected! Clearing session...');
+            sessionStorage.removeItem(redirectKey);
+            localStorage.removeItem('saramonda_access_token');
+            localStorage.removeItem('saramonda_refresh_token');
+            localStorage.removeItem('saramonda_user');
+
+            // Show error message instead of redirecting again
+            document.body.innerHTML = `
+                <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: #1a1a2e; color: white; font-family: sans-serif;">
+                    <div style="text-align: center; padding: 40px;">
+                        <div style="font-size: 4rem; margin-bottom: 20px;">⚠️</div>
+                        <h2 style="margin-bottom: 15px;">Session Error</h2>
+                        <p style="color: #94a3b8; margin-bottom: 30px;">พบปัญหาการ login กรุณาเริ่มต้นใหม่</p>
+                        <button onclick="window.location.href='login.html'" style="background: #FF6B35; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 1rem; cursor: pointer;">
+                            เข้าสู่ระบบใหม่
+                        </button>
+                    </div>
+                </div>
+            `;
+            throw new Error('Redirect loop detected');
+        }
+
+        // Increment redirect counter
+        sessionStorage.setItem(redirectKey, (redirectCount + 1).toString());
+
+        if (!window.AuthGuard.protectPage(window.AuthGuard.roles.kitchen)) {
+            // If protection fails, stop execution
+            throw new Error('Access denied');
+        }
+
+        // Reset redirect counter on successful auth
+        sessionStorage.removeItem(redirectKey);
+
+        // Kitchen Display connected to Backend API
+        const BRANCH_ID = 'branch_001';
+        let soundEnabled = true;
+
+        // Update time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('currentTime').textContent =
+                now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Sound toggle
+        document.getElementById('soundToggle').addEventListener('click', () => {
+            soundEnabled = !soundEnabled;
+            const btn = document.getElementById('soundToggle');
+            const icon = document.getElementById('soundIcon');
+            btn.classList.toggle('muted', !soundEnabled);
+            icon.textContent = soundEnabled ? '🔔' : '🔕';
+        });
+
+        // Play notification sound
+        function playNotificationSound() {
+            const audio = new Audio('data:audio/mp3;base64,//uQxAAAAAANIAAAAAExBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVQ');
+            audio.play().catch(() => { });
+        }
+
+        // Show toast notification
+        function showToast(type, title, message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+
+            const icons = { success: '✅', warning: '⚠️', error: '❌' };
+
+            toast.innerHTML = `
+                <span class="toast-icon">${icons[type] || '📢'}</span>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+                <button class="toast-close" onclick="this.parentElement.remove()">×</button>
+            `;
+
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 5000);
+        }
+
+        // Format time ago
+        function formatTimeAgo(dateStr) {
+            const date = new Date(dateStr);
+            const now = new Date();
+            const diff = Math.floor((now - date) / 1000);
+
+            if (diff < 60) return 'เมื่อสักครู่';
+            if (diff < 3600) return `${Math.floor(diff / 60)} นาที`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)} ชม.`;
+            return `${Math.floor(diff / 86400)} วัน`;
+        }
+
+        // Get next status
+        function getNextStatus(status) {
+            const flow = {
+                'pending': 'confirmed',
+                'confirmed': 'preparing',
+                'preparing': 'ready',
+                'ready': 'completed'
+            };
+            return flow[status] || null;
+        }
+
+        // Get action label
+        function getActionLabel(status) {
+            const labels = {
+                'pending': 'ยืนยันออเดอร์',
+                'confirmed': 'เริ่มเตรียม',
+                'preparing': 'พร้อมเสิร์ฟ',
+                'ready': 'เสร็จสิ้น'
+            };
+            return labels[status] || 'อัพเดต';
+        }
+
+        // Render order card
+        function renderOrderCard(order) {
+            const timeAgo = formatTimeAgo(order.created_at);
+            const isUrgent = (Date.now() - new Date(order.created_at).getTime()) > 600000;
+
+            const itemsHtml = (order.items || []).map(item => {
+                const sizeStr = item.variant_name ? `(${item.variant_name})` : '';
+                return `
+                    <div class="order-item">
+                        <span class="item-qty">${item.quantity}</span>
+                        <div class="item-details">
+                            <div class="item-name">${item.product_name}</div>
+                            ${sizeStr ? `<div class="item-size">${sizeStr}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const nextStatus = getNextStatus(order.status);
+            const actionLabel = getActionLabel(order.status);
+
+            let actionsHtml = '';
+            if (nextStatus) {
+                actionsHtml = `
+                    <div class="order-footer">
+                        <button class="action-btn primary" onclick="advanceOrder('${order.id}', '${nextStatus}')">
+                            ${actionLabel} →
+                        </button>
+                    </div>
+                `;
+            }
+
+            // 🛵 Delivery badges and time slot
+            const isDelivery = order.order_type === 'DELIVERY';
+            const deliveryBadgeHtml = isDelivery
+                ? `<span class="delivery-badge">🚚 Delivery</span>`
+                : `<span class="delivery-badge pickup">🏪 รับเอง</span>`;
+
+            const timeSlotHtml = order.time_slot_name
+                ? `<span class="time-slot-badge">⏰ ${order.time_slot_name}</span>`
+                : '';
+
+            const deliveryDateHtml = order.delivery_date
+                ? `<span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 8px;">📅 ${order.delivery_date}</span>`
+                : '';
+
+            return `
+                <div class="order-card priority-${order.priority || 'normal'}" data-order-id="${order.id}">
+                    <div class="order-header">
+                        <span class="order-number">#${order.order_number}</span>
+                        <span class="order-time ${isUrgent ? 'urgent' : ''}">
+                            ${isUrgent ? '⚠️' : '🕐'} ${timeAgo}
+                        </span>
+                    </div>
+                    <!-- 🛵 Delivery Info Row -->
+                    <div style="display: flex; align-items: center; gap: 8px; padding: 8px 15px; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border);">
+                        ${deliveryBadgeHtml}
+                        ${timeSlotHtml}
+                        ${deliveryDateHtml}
+                    </div>
+                    <div class="order-body">
+                        <div class="order-items">
+                            ${itemsHtml}
+                        </div>
+                        <div class="order-customer">
+                            <span>👤</span>
+                            <span>${order.customer_name}</span>
+                            <span>📞</span>
+                            <span>${order.customer_phone || '-'}</span>
+                        </div>
+                        ${isDelivery && order.customer_address ? `
+                            <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; border-radius: 0 8px 8px 0; font-size: 0.85rem; margin-bottom: 12px;">
+                                📍 ${order.customer_address}
+                            </div>
+                        ` : ''}
+                        ${order.notes ? `<div class="order-notes">📝 ${order.notes}</div>` : ''}
+                        ${actionsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Advance order to next status
+        async function advanceOrder(orderId, newStatus) {
+            try {
+                const result = await window.SaramondaAPI.Orders.updateStatus(orderId, newStatus);
+
+                if (result.success) {
+                    loadOrders();
+                    showToast('success', 'อัพเดตสำเร็จ', `สถานะถูกเปลี่ยนเป็น ${newStatus}`);
+                } else {
+                    showToast('error', 'เกิดข้อผิดพลาด', result.error);
+                }
+            } catch (error) {
+                console.error('Update error:', error);
+                showToast('error', 'เกิดข้อผิดพลาด', 'ไม่สามารถอัพเดตได้');
+            }
+        }
+
+        // Load and display orders from API
+        async function loadOrders() {
+            try {
+                const result = await window.SaramondaAPI.Orders.getKitchenOrders();
+
+                if (!result.success) {
+                    console.error('Failed to load orders:', result.error);
+                    return;
+                }
+
+                const orders = result.data || [];
+
+                const pending = orders.filter(o => o.status === 'pending' || o.status === 'confirmed');
+                const preparing = orders.filter(o => o.status === 'preparing');
+                const ready = orders.filter(o => o.status === 'ready');
+
+                // Update counts
+                document.getElementById('pendingCount').textContent = pending.length;
+                document.getElementById('preparingCount').textContent = preparing.length;
+                document.getElementById('readyCount').textContent = ready.length;
+
+                document.getElementById('pendingColumnCount').textContent = pending.length;
+                document.getElementById('preparingColumnCount').textContent = preparing.length;
+                document.getElementById('readyColumnCount').textContent = ready.length;
+
+                // Render columns
+                const pendingContainer = document.getElementById('pendingOrders');
+                const preparingContainer = document.getElementById('preparingOrders');
+                const readyContainer = document.getElementById('readyOrders');
+
+                pendingContainer.innerHTML = pending.length ? pending.map(o => renderOrderCard(o)).join('') :
+                    '<div class="empty-column"><div class="empty-icon">✨</div><div>ไม่มีออเดอร์รอยืนยัน</div></div>';
+
+                preparingContainer.innerHTML = preparing.length ? preparing.map(o => renderOrderCard(o)).join('') :
+                    '<div class="empty-column"><div class="empty-icon">🍽️</div><div>ไม่มีออเดอร์กำลังเตรียม</div></div>';
+
+                readyContainer.innerHTML = ready.length ? ready.map(o => renderOrderCard(o)).join('') :
+                    '<div class="empty-column"><div class="empty-icon">📦</div><div>ไม่มีออเดอร์พร้อมรับ</div></div>';
+
+            } catch (error) {
+                console.error('Load orders error:', error);
+            }
+        }
+
+        // Initialize
+        async function init() {
+            // Connect WebSocket for real-time updates
+            window.SaramondaAPI.connectWebSocket('kitchen', BRANCH_ID);
+
+            // Listen for WebSocket messages
+            window.SaramondaAPI.onWebSocketMessage((message) => {
+                console.log('Kitchen received:', message);
+
+                if (message.type === 'new_order') {
+                    loadOrders();
+                    showToast('warning', 'ออเดอร์ใหม่!', `#${message.orderNumber} - ${message.customerName}`);
+                    if (soundEnabled) {
+                        playNotificationSound();
+                    }
+                } else if (message.type === 'order_status_change') {
+                    loadOrders();
+                } else if (message.type === 'kitchen_update') {
+                    loadOrders();
+                }
+            });
+
+            // Initial load
+            await loadOrders();
+
+            // Poll for updates every 10 seconds (backup for WebSocket)
+            setInterval(loadOrders, 10000);
+
+            console.log('🍳 Kitchen Display connected to API');
+        }
+
+        init();
+    </script>
+</body>
+
+</html>

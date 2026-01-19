@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="th" data-lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Saramondā | Premium Salmon</title>
+    <meta name="description" content="Pre-order Premium Salmon Sashimi Grade SUP from Norway">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="mobile-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">鮭</div>
+                    <div class="logo-text">
+                        <h1>Saramondā</h1>
+                        <span class="tagline" data-th="ซาชิมิพรีเมียม" data-en="Premium Sashimi">ซาชิมิพรีเมียม</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="lang-btn" id="langBtn">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" id="langText">EN</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-image">
+                <img src="images/hero.png" alt="Premium Salmon Sashimi">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="flag">🇳🇴</span>
+                    <span data-th="นำเข้าจากนอร์เวย์" data-en="Direct from Norway">นำเข้าจากนอร์เวย์</span>
+                </div>
+                <h2 class="hero-title">
+                    <span class="jp-text">新鮮なサーモン</span>
+                    <span class="main-text" data-th="แซลมอนสดใหม่" data-en="Fresh Salmon">แซลมอนสดใหม่</span>
+                </h2>
+                <p class="hero-subtitle" data-th="เกรดซาชิมิ SUP คุณภาพสูงสุด" data-en="SUP Grade Sashimi Quality">
+                    เกรดซาชิมิ SUP คุณภาพสูงสุด</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">❄️</span>
+                        <span class="feature-text" data-th="สดใหม่ 48 ชม." data-en="Fresh 48 hrs">สดใหม่ 48 ชม.</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✨</span>
+                        <span class="feature-text" data-th="เกรด SUP" data-en="SUP Grade">เกรด SUP</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🎌</span>
+                        <span class="feature-text" data-th="คุณภาพญี่ปุ่น" data-en="Japan Quality">คุณภาพญี่ปุ่น</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Tabs -->
+        <nav class="category-tabs">
+            <button class="tab-btn active" data-category="sashimi">
+                <span class="tab-jp">刺身</span>
+                <span class="tab-text" data-th="ซาชิมิ" data-en="Sashimi">ซาชิมิ</span>
+            </button>
+            <button class="tab-btn" data-category="yakiniku">
+                <span class="tab-jp">焼肉丼</span>
+                <span class="tab-text" data-th="ยากินิกุ" data-en="Yakiniku">ยากินิกุ</span>
+            </button>
+            <button class="tab-btn" data-category="combo">
+                <span class="tab-jp">セット</span>
+                <span class="tab-text" data-th="ชุดสุดคุ้ม" data-en="Set Menu">ชุดสุดคุ้ม</span>
+            </button>
+        </nav>
+
+        <!-- Products Section -->
+        <main class="products-section" id="productsSection">
+            <!-- Sashimi Products -->
+            <div class="category-group active" data-category="sashimi">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span class="title-jp">刺身トリム</span>
+                        <h3 data-th="ซาชิมิแซลมอน" data-en="Salmon Sashimi">ซาชิมิแซลมอน</h3>
+                    </div>
+                    <p class="section-desc" data-th="เลือกส่วนที่ต้องการ เกรด SUP" data-en="Choose your cut, SUP Grade">
+                        เลือกส่วนที่ต้องการ เกรด SUP</p>
+                </div>
+
+                <!-- Trim A -->
+                <div class="product-card has-sizes" data-product-id="trim-a">
+                    <div class="product-badge best" data-th="ขายดี" data-en="Best">ขายดี</div>
+                    <div class="product-image">
+                        <img src="images/trim-a.png" alt="Trim A Premium Belly" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">大トロ</span>
+                                <h4 data-th="ทริม A - ส่วนท้อง" data-en="Trim A - Belly">ทริม A - ส่วนท้อง</h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="เนื้อนุ่มละมุน ไขมันแทรกสวย ละลายในปาก"
+                            data-en="Soft and tender, beautiful marbling, melts in mouth">เนื้อนุ่มละมุน ไขมันแทรกสวย
+                            ละลายในปาก</p>
+                        <div class="size-selector">
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-a" value="200g" data-price="218">
+                                <span class="size-btn">
+                                    <span class="size-weight">200g</span>
+                                    <span class="size-price">฿218</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-a" value="500g" data-price="545" checked>
+                                <span class="size-btn">
+                                    <span class="size-weight">500g</span>
+                                    <span class="size-price">฿545</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-a" value="1kg" data-price="1090">
+                                <span class="size-btn">
+                                    <span class="size-weight">1kg</span>
+                                    <span class="size-price">฿1,090</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">545</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trim B -->
+                <div class="product-card has-sizes" data-product-id="trim-b">
+                    <div class="product-image">
+                        <img src="images/trim-b.png" alt="Trim B Center Cut" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">中トロ</span>
+                                <h4 data-th="ทริม B - ส่วนกลาง" data-en="Trim B - Center">ทริม B - ส่วนกลาง</h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="เนื้อแน่น สีส้มสวย รสชาติกลมกล่อม"
+                            data-en="Firm texture, beautiful orange, balanced flavor">เนื้อแน่น สีส้มสวย รสชาติกลมกล่อม
+                        </p>
+                        <div class="size-selector">
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-b" value="200g" data-price="184">
+                                <span class="size-btn">
+                                    <span class="size-weight">200g</span>
+                                    <span class="size-price">฿184</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-b" value="500g" data-price="460" checked>
+                                <span class="size-btn">
+                                    <span class="size-weight">500g</span>
+                                    <span class="size-price">฿460</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-b" value="1kg" data-price="920">
+                                <span class="size-btn">
+                                    <span class="size-weight">1kg</span>
+                                    <span class="size-price">฿920</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">460</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trim C -->
+                <div class="product-card has-sizes" data-product-id="trim-c">
+                    <div class="product-image">
+                        <img src="images/trim-c.png" alt="Trim C Tail Section" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">赤身</span>
+                                <h4 data-th="ทริม C - ส่วนหาง" data-en="Trim C - Tail">ทริม C - ส่วนหาง</h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="เนื้อแน่นกว่า เหมาะทานสดหรือย่าง"
+                            data-en="Firmer texture, great for sashimi or grilling">เนื้อแน่นกว่า เหมาะทานสดหรือย่าง</p>
+                        <div class="size-selector">
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-c" value="200g" data-price="144">
+                                <span class="size-btn">
+                                    <span class="size-weight">200g</span>
+                                    <span class="size-price">฿144</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-c" value="500g" data-price="360" checked>
+                                <span class="size-btn">
+                                    <span class="size-weight">500g</span>
+                                    <span class="size-price">฿360</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-c" value="1kg" data-price="720">
+                                <span class="size-btn">
+                                    <span class="size-weight">1kg</span>
+                                    <span class="size-price">฿720</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">360</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trim D -->
+                <div class="product-card has-sizes" data-product-id="trim-d">
+                    <div class="product-badge value" data-th="คุ้มค่า" data-en="Value">คุ้มค่า</div>
+                    <div class="product-image">
+                        <img src="images/trim-d.png" alt="Trim D Mixed Cut" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">ミックス</span>
+                                <h4 data-th="ทริม D - รวมหลายส่วน" data-en="Trim D - Mixed">ทริม D - รวมหลายส่วน</h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="รวมหลายตำแหน่ง คุ้มค่า เหมาะทำอาหาร"
+                            data-en="Mixed positions, great value for cooking">รวมหลายตำแหน่ง คุ้มค่า เหมาะทำอาหาร</p>
+                        <div class="size-selector">
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-d" value="200g" data-price="108">
+                                <span class="size-btn">
+                                    <span class="size-weight">200g</span>
+                                    <span class="size-price">฿108</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-d" value="500g" data-price="270" checked>
+                                <span class="size-btn">
+                                    <span class="size-weight">500g</span>
+                                    <span class="size-price">฿270</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-trim-d" value="1kg" data-price="540">
+                                <span class="size-btn">
+                                    <span class="size-weight">1kg</span>
+                                    <span class="size-price">฿540</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">270</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yakiniku Don Products -->
+            <div class="category-group" data-category="yakiniku">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span class="title-jp">焼肉丼</span>
+                        <h3 data-th="ข้าวหน้าเนื้อย่าง" data-en="Yakiniku Don">ข้าวหน้าเนื้อย่าง</h3>
+                    </div>
+                    <p class="section-desc" data-th="เนื้อย่างสไตล์ญี่ปุ่น บนข้าวสวยร้อนๆ"
+                        data-en="Japanese grilled meat on hot rice">เนื้อย่างสไตล์ญี่ปุ่น บนข้าวสวยร้อนๆ</p>
+                </div>
+
+                <!-- Karubi Don -->
+                <div class="product-card" data-product-id="karubi-don">
+                    <div class="product-badge best" data-th="ขายดี" data-en="Best Seller">ขายดี</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop&q=80"
+                            alt="Classic Karubi Don" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">牛カルビ</span>
+                                <h4 data-th="คารูบิ ดอน" data-en="Karubi Don">คารูบิ ดอน</h4>
+                            </div>
+                            <div class="product-grade">丼</div>
+                        </div>
+                        <p class="product-desc" data-th="เนื้อซี่โครงย่าง ซอสทาเระหวานเค็ม โรยงาและต้นหอม"
+                            data-en="Grilled short plate beef with sweet tare sauce, sesame & scallions">
+                            เนื้อซี่โครงย่าง ซอสทาเระหวานเค็ม โรยงาและต้นหอม</p>
+                        <div class="product-specs">
+                            <span class="spec" data-th="1 ที่" data-en="1 serving">1 ที่</span>
+                            <span class="spec" data-th="ข้าวญี่ปุ่น" data-en="Japanese rice">ข้าวญี่ปุ่น</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">129</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rosu Garlic Butter Don -->
+                <div class="product-card" data-product-id="rosu-garlic-don">
+                    <div class="product-badge best" data-th="แนะนำ" data-en="Recommended">แนะนำ</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=400&h=300&fit=crop&q=80"
+                            alt="Rosu Garlic Butter Don" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">ロース</span>
+                                <h4 data-th="โรสุ การ์ลิค บัตเตอร์" data-en="Rosu Garlic Butter">โรสุ การ์ลิค บัตเตอร์
+                                </h4>
+                            </div>
+                            <div class="product-grade">丼</div>
+                        </div>
+                        <p class="product-desc" data-th="เนื้อสันนอกย่าง เนยกระเทียมละลาย กระเทียมเจียว พริกไทยดำ"
+                            data-en="Lean beef with melted garlic butter, garlic chips, black pepper">เนื้อสันนอกย่าง
+                            เนยกระเทียมละลาย กระเทียมเจียว พริกไทยดำ</p>
+                        <div class="product-specs">
+                            <span class="spec" data-th="1 ที่" data-en="1 serving">1 ที่</span>
+                            <span class="spec" data-th="เนยกระเทียม" data-en="Garlic butter">เนยกระเทียม</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">139</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spicy Harami Don -->
+                <div class="product-card" data-product-id="harami-spicy-don">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&h=300&fit=crop&q=80"
+                            alt="Spicy Harami Don" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">ハラミ</span>
+                                <h4 data-th="ฮารามิ สไปซี่" data-en="Spicy Harami">ฮารามิ สไปซี่</h4>
+                            </div>
+                            <div class="product-grade">辛</div>
+                        </div>
+                        <p class="product-desc" data-th="เนื้อกะบังลมย่าง ซอสทาเระรสเผ็ด ชิจิมิโทการาชิ"
+                            data-en="Grilled diaphragm with spicy tare, shichimi powder">เนื้อกะบังลมย่าง ซอสทาเระรสเผ็ด
+                            ชิจิมิโทการาชิ</p>
+                        <div class="product-specs">
+                            <span class="spec" data-th="1 ที่" data-en="1 serving">1 ที่</span>
+                            <span class="spec" data-th="เผ็ดกลาง" data-en="Medium spicy">เผ็ดกลาง</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">139</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horumon Aburi Don -->
+                <div class="product-card" data-product-id="horumon-don">
+                    <div class="product-badge value" data-th="คุ้มค่า" data-en="Value">คุ้มค่า</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop&q=80"
+                            alt="Horumon Aburi Don" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">ホルモン</span>
+                                <h4 data-th="โฮรุมอน อาบุริ" data-en="Horumon Aburi">โฮรุมอน อาบุริ</h4>
+                            </div>
+                            <div class="product-grade">丼</div>
+                        </div>
+                        <p class="product-desc" data-th="เครื่องในย่างลนไฟ ซอสทาเระหวาน โรยงาและต้นหอม"
+                            data-en="Torched intestines with sweet tare, sesame & scallions">เครื่องในย่างลนไฟ
+                            ซอสทาเระหวาน โรยงาและต้นหอม</p>
+                        <div class="product-specs">
+                            <span class="spec" data-th="1 ที่" data-en="1 serving">1 ที่</span>
+                            <span class="spec" data-th="อาบุริ" data-en="Torched">อาบุริ</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">109</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Liver Shio Don -->
+                <div class="product-card" data-product-id="liver-don">
+                    <div class="product-badge value" data-th="ประหยัด" data-en="Budget">ประหยัด</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&h=300&fit=crop&q=80"
+                            alt="Liver Shio Don" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">レバー</span>
+                                <h4 data-th="ตับ ชิโอะ" data-en="Liver Shio">ตับ ชิโอะ</h4>
+                            </div>
+                            <div class="product-grade">丼</div>
+                        </div>
+                        <p class="product-desc" data-th="ตับย่างรสเกลือ น้ำมันงาหอม แต่งด้วยขิงสด"
+                            data-en="Grilled liver with salt finish, sesame oil, fresh ginger">ตับย่างรสเกลือ
+                            น้ำมันงาหอม แต่งด้วยขิงสด</p>
+                        <div class="product-specs">
+                            <span class="spec" data-th="1 ที่" data-en="1 serving">1 ที่</span>
+                            <span class="spec" data-th="ชิโอะ" data-en="Salt style">ชิโอะ</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">99</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Sets -->
+            <div class="category-group" data-category="combo">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span class="title-jp">お得なセット</span>
+                        <h3 data-th="ชุดสุดคุ้ม" data-en="Value Sets">ชุดสุดคุ้ม</h3>
+                    </div>
+                    <p class="section-desc" data-th="รวมของดี ราคาพิเศษ" data-en="Best items, special price">รวมของดี
+                        ราคาพิเศษ</p>
+                </div>
+
+                <div class="product-card combo" data-product-id="combo-family">
+                    <div class="product-badge save" data-th="ประหยัด 20%" data-en="Save 20%">ประหยัด 20%</div>
+                    <div class="product-image">
+                        <img src="images/combo-family.png" alt="Family Set" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">ファミリー</span>
+                                <h4 data-th="ชุดครอบครัว" data-en="Family Set">ชุดครอบครัว</h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="ทริม A + ทริม B + สเต็กพรีเมียม สำหรับ 4-6 คน"
+                            data-en="Trim A + Trim B + Premium Steak for 4-6 people">ทริม A + ทริม B + สเต็กพรีเมียม
+                            สำหรับ 4-6 คน</p>
+                        <div class="product-specs">
+                            <span class="spec" data-th="4-6 คน" data-en="4-6 people">4-6 คน</span>
+                            <span class="spec" data-th="1.5 กก." data-en="1.5kg total">1.5 กก.</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price has-original">
+                                <span class="price-original">฿3,170</span>
+                                <div class="price-current">
+                                    <span class="price-symbol">฿</span>
+                                    <span class="price-value">2,490</span>
+                                </div>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card combo" data-product-id="combo-couple">
+                    <div class="product-badge save" data-th="ประหยัด 15%" data-en="Save 15%">ประหยัด 15%</div>
+                    <div class="product-image">
+                        <img src="images/combo-couple.png" alt="Couple Set" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">カップル</span>
+                                <h4 data-th="ชุดคู่รัก" data-en="Couple Set">ชุดคู่รัก</h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="ทริม A + สเต็กคลาสสิก สำหรับ 2 คน"
+                            data-en="Trim A + Classic Steak for 2 people">ทริม A + สเต็กคลาสสิก สำหรับ 2 คน</p>
+                        <div class="product-specs">
+                            <span class="spec" data-th="2 คน" data-en="2 people">2 คน</span>
+                            <span class="spec" data-th="700 กรัม" data-en="700g total">700 กรัม</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price has-original">
+                                <span class="price-original">฿1,980</span>
+                                <div class="price-current">
+                                    <span class="price-symbol">฿</span>
+                                    <span class="price-value">1,690</span>
+                                </div>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card combo" data-product-id="arai-teishoku">
+                    <div class="product-badge best" data-th="แนะนำ" data-en="Recommended">แนะนำ</div>
+                    <div class="product-image">
+                        <img src="images/arai-teishoku.png" alt="Arai Teishoku Set" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">定食セット</span>
+                                <h4 data-th="Arai Teishoku Set" data-en="Arai Teishoku Set">Arai Teishoku Set</h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="ข้าวหน้าแซลมอนย่าง พร้อมซุปมิโสะ สไตล์ดงบุริ"
+                            data-en="Grilled salmon on rice with miso soup, Donburi style">ข้าวหน้าแซลมอนย่าง
+                            พร้อมซุปมิโสะ สไตล์ดงบุริ</p>
+                        <div class="product-specs">
+                            <span class="spec" data-th="1 คน" data-en="1 person">1 คน</span>
+                            <span class="spec" data-th="พร้อมทาน" data-en="Ready to eat">พร้อมทาน</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">89</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary" id="cartSummary">
+            <div class="cart-summary-content">
+                <div class="cart-info">
+                    <span class="cart-label" data-th="รายการ" data-en="items">รายการ</span>
+                    <span class="cart-total">฿<span id="totalPrice">0</span></span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">
+                    <span data-th="สั่งจองเลย" data-en="Pre-order Now">สั่งจองเลย</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Order Modal -->
+        <div class="modal-overlay" id="orderModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 data-th="ยืนยันการสั่งจอง" data-en="Confirm Pre-order">ยืนยันการสั่งจอง</h3>
+                    <button class="modal-close" id="closeModal">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="order-list" id="orderList"></div>
+                    <!-- Delivery Summary -->
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span data-th="รวมสินค้า" data-en="Subtotal">รวมสินค้า</span>
+                            <span id="modalSubtotal">฿0</span>
+                        </div>
+                        <div class="summary-row delivery-fee-row">
+                            <span data-th="ค่าจัดส่ง" data-en="Delivery">ค่าจัดส่ง</span>
+                            <span id="deliveryFeeDisplay" class="delivery-fee-value">฿40</span>
+                        </div>
+                        <!-- Free delivery hint -->
+                        <div class="free-delivery-hint" id="freeDeliveryHint" style="display: none;">
+                            <span class="hint-icon">💡</span>
+                            <span id="freeDeliveryText" data-th="เพิ่มอีก ฿X ส่งฟรี!"
+                                data-en="Add ฿X more for free delivery!">เพิ่มอีก ฿69 ส่งฟรี!</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span data-th="ยอดรวม" data-en="Total">ยอดรวม</span>
+                            <span id="modalTotal">฿0</span>
+                        </div>
+                    </div>
+
+                    <!-- Minimum Order Warning -->
+                    <div class="min-order-warning" id="minOrderWarning" style="display: none;">
+                        <span class="warning-icon">⚠️</span>
+                        <span data-th="ยอดขั้นต่ำ ฿199" data-en="Minimum order ฿199">ยอดขั้นต่ำ ฿199</span>
+                    </div>
+
+                    <!-- Delivery Date & Time Slot -->
+                    <div class="form-section">
+                        <h4 data-th="🚚 วันและเวลาจัดส่ง" data-en="🚚 Delivery Date & Time">🚚 วันและเวลาจัดส่ง</h4>
+
+                        <!-- Date Selection -->
+                        <div class="delivery-date-selector">
+                            <label class="delivery-option">
+                                <input type="radio" name="deliveryDate" value="tomorrow" checked>
+                                <span class="option-content">
+                                    <span class="option-label" data-th="พรุ่งนี้" data-en="Tomorrow">พรุ่งนี้</span>
+                                    <span class="option-date" id="tomorrowDate">19 ม.ค.</span>
+                                </span>
+                            </label>
+                            <label class="delivery-option">
+                                <input type="radio" name="deliveryDate" value="dayAfter">
+                                <span class="option-content">
+                                    <span class="option-label" data-th="มะรืนนี้" data-en="Day After">มะรืนนี้</span>
+                                    <span class="option-date" id="dayAfterDate">20 ม.ค.</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Time Slot Selection -->
+                        <h4 data-th="⏰ ช่วงเวลา" data-en="⏰ Time Slot" style="margin-top: 15px;">⏰ ช่วงเวลา</h4>
+                        <div class="time-slot-selector" id="timeSlotSelector">
+                            <label class="time-slot-option">
+                                <input type="radio" name="timeSlot" value="MORNING" checked>
+                                <span class="slot-content">
+                                    <span class="slot-time">10:00 - 14:00</span>
+                                    <span class="slot-remaining" id="morningRemaining">
+                                        <span class="remaining-count">8</span>
+                                        <span data-th="เหลือ" data-en="left">เหลือ</span>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="time-slot-option">
+                                <input type="radio" name="timeSlot" value="EVENING">
+                                <span class="slot-content">
+                                    <span class="slot-time">16:00 - 20:00</span>
+                                    <span class="slot-remaining" id="eveningRemaining">
+                                        <span class="remaining-count">7</span>
+                                        <span data-th="เหลือ" data-en="left">เหลือ</span>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Quota Full Warning -->
+                        <div class="quota-warning" id="quotaWarning" style="display: none;">
+                            <span class="warning-icon">🚫</span>
+                            <span data-th="ออเดอร์วันนี้เต็มแล้ว กรุณาเลือกวันอื่น"
+                                data-en="Today's orders are full. Please select another day.">ออเดอร์วันนี้เต็มแล้ว
+                                กรุณาเลือกวันอื่น</span>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h4 data-th="ข้อมูลผู้สั่ง" data-en="Your Information">ข้อมูลผู้สั่ง</h4>
+                        <input type="text" class="input-field" id="customerName" data-placeholder-th="ชื่อ-นามสกุล"
+                            data-placeholder-en="Full Name" placeholder="ชื่อ-นามสกุล">
+                        <input type="tel" class="input-field" id="customerPhone" data-placeholder-th="เบอร์โทรศัพท์"
+                            data-placeholder-en="Phone Number" placeholder="เบอร์โทรศัพท์">
+                        <textarea class="input-field" id="customerAddress" data-placeholder-th="ที่อยู่จัดส่ง"
+                            data-placeholder-en="Delivery Address" placeholder="ที่อยู่จัดส่ง"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="confirm-btn" id="confirmOrder" data-th="ยืนยันการสั่งจอง"
+                        data-en="Confirm Pre-order">ยืนยันการสั่งจอง</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal-overlay success-modal" id="successModal">
+            <div class="modal-content success-content">
+                <div class="success-icon">✓</div>
+                <h3 data-th="สั่งจองสำเร็จ" data-en="Order Confirmed">สั่งจองสำเร็จ</h3>
+                <p data-th="ขอบคุณสำหรับการสั่งจอง เราจะติดต่อกลับภายใน 30 นาที"
+                    data-en="Thank you for your order. We will contact you within 30 minutes.">ขอบคุณสำหรับการสั่งจอง
+                    เราจะติดต่อกลับภายใน 30 นาที</p>
+                <div class="points-earned-display" id="pointsEarnedDisplay" style="display: none;">
+                    <span class="points-icon">⭐</span>
+                    <span data-th="คุณได้รับ" data-en="You earned">คุณได้รับ</span>
+                    <span class="points-value" id="earnedPointsValue">0</span>
+                    <span data-th="แต้ม" data-en="points">แต้ม</span>
+                </div>
+
+                <!-- Add LINE OA Section -->
+                <div class="line-oa-invite" id="lineOaInvite">
+                    <div class="line-oa-divider">
+                        <span data-th="รับแจ้งเตือนสถานะ" data-en="Get order updates">รับแจ้งเตือนสถานะ</span>
+                    </div>
+                    <a href="https://line.me/R/ti/p/@096lomsu" target="_blank" class="add-line-btn" id="addLineBtn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
+                            <path
+                                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                        </svg>
+                        <span data-th="เพิ่มเพื่อน LINE รับโปรพิเศษ" data-en="Add LINE for exclusive offers">เพิ่มเพื่อน
+                            LINE รับโปรพิเศษ</span>
+                    </a>
+                    <p class="line-oa-hint" data-th="📱 รับแจ้งเตือนออเดอร์ + โปรโมชั่นพิเศษ"
+                        data-en="📱 Get order updates + exclusive promotions">📱 รับแจ้งเตือนออเดอร์ + โปรโมชั่นพิเศษ
+                    </p>
+                </div>
+
+                <button class="success-btn" id="closeSuccess" data-th="ตกลง" data-en="OK">ตกลง</button>
+            </div>
+        </div>
+
+        <!-- Auth Modal (Login/Register) -->
+        <div class="modal-overlay auth-modal" id="authModal">
+            <div class="modal-content auth-content">
+                <div class="modal-header">
+                    <h3 id="authModalTitle" data-th="เข้าสู่ระบบ" data-en="Login">เข้าสู่ระบบ</h3>
+                    <button class="modal-close" id="closeAuthModal">×</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Tab Switcher -->
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login" data-th="เข้าสู่ระบบ"
+                            data-en="Login">เข้าสู่ระบบ</button>
+                        <button class="auth-tab" data-tab="register" data-th="สมัครสมาชิก"
+                            data-en="Register">สมัครสมาชิก</button>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="auth-form active" id="loginForm">
+                        <div class="member-benefits-mini">
+                            <div class="benefit-item">
+                                <span class="benefit-icon">⭐</span>
+                                <span data-th="สะสมแต้มทุกออเดอร์"
+                                    data-en="Earn points on every order">สะสมแต้มทุกออเดอร์</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🎁</span>
+                                <span data-th="รับส่วนลดพิเศษ" data-en="Get exclusive discounts">รับส่วนลดพิเศษ</span>
+                            </div>
+                        </div>
+                        <input type="email" class="input-field" id="loginEmail" data-placeholder-th="อีเมล"
+                            data-placeholder-en="Email" placeholder="อีเมล">
+                        <input type="password" class="input-field" id="loginPassword" data-placeholder-th="รหัสผ่าน"
+                            data-placeholder-en="Password" placeholder="รหัสผ่าน">
+                        <button class="confirm-btn" id="loginBtn" data-th="เข้าสู่ระบบ"
+                            data-en="Login">เข้าสู่ระบบ</button>
+                        <p class="auth-error" id="loginError"></p>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="auth-form" id="registerForm">
+                        <div class="welcome-bonus">
+                            <span class="bonus-icon">🎉</span>
+                            <span data-th="สมัครวันนี้รับ 100 แต้มฟรี!"
+                                data-en="Sign up today, get 100 free points!">สมัครวันนี้รับ 100 แต้มฟรี!</span>
+                        </div>
+                        <input type="text" class="input-field" id="registerName" data-placeholder-th="ชื่อ-นามสกุล"
+                            data-placeholder-en="Full Name" placeholder="ชื่อ-นามสกุล">
+                        <input type="email" class="input-field" id="registerEmail" data-placeholder-th="อีเมล"
+                            data-placeholder-en="Email" placeholder="อีเมล">
+                        <input type="tel" class="input-field" id="registerPhone" data-placeholder-th="เบอร์โทรศัพท์"
+                            data-placeholder-en="Phone Number" placeholder="เบอร์โทรศัพท์">
+                        <input type="password" class="input-field" id="registerPassword" data-placeholder-th="รหัสผ่าน"
+                            data-placeholder-en="Password" placeholder="รหัสผ่าน">
+                        <button class="confirm-btn" id="registerBtn" data-th="สมัครสมาชิก"
+                            data-en="Register">สมัครสมาชิก</button>
+                        <p class="auth-error" id="registerError"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Page Modal -->
+        <div class="modal-overlay account-modal" id="accountModal">
+            <div class="modal-content account-content">
+                <div class="modal-header account-header">
+                    <h3 data-th="บัญชีของฉัน" data-en="My Account">บัญชีของฉัน</h3>
+                    <button class="modal-close" id="closeAccountModal">×</button>
+                </div>
+                <div class="modal-body account-body">
+                    <!-- Member Card -->
+                    <div class="member-card" id="memberCard">
+                        <div class="member-card-bg"></div>
+                        <div class="member-card-content">
+                            <div class="member-tier-badge" id="memberTierBadge">
+                                <span class="tier-icon">🥉</span>
+                                <span class="tier-name">Bronze</span>
+                            </div>
+                            <div class="member-info">
+                                <h4 id="memberName">Guest</h4>
+                                <p id="memberEmail">guest@example.com</p>
+                            </div>
+                            <div class="member-points-display">
+                                <div class="points-circle">
+                                    <span class="points-number" id="memberPoints">0</span>
+                                    <span class="points-label" data-th="แต้ม" data-en="PTS">แต้ม</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tier-progress">
+                            <div class="tier-progress-bar">
+                                <div class="tier-progress-fill" id="tierProgressFill" style="width: 0%"></div>
+                            </div>
+                            <p class="tier-progress-text" id="tierProgressText" data-th="อีก 1000 แต้มถึง Silver"
+                                data-en="1000 more points to Silver">อีก 1000 แต้มถึง Silver</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="account-section">
+                        <h4 data-th="สิทธิพิเศษของคุณ" data-en="Your Benefits">สิทธิพิเศษของคุณ</h4>
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" id="redeemPointsBtn">
+                                <span class="action-icon">💰</span>
+                                <span data-th="แลกแต้ม" data-en="Redeem">แลกแต้ม</span>
+                            </button>
+                            <button class="quick-action-btn" id="myVouchersBtn">
+                                <span class="action-icon">🎫</span>
+                                <span data-th="คูปอง" data-en="Vouchers">คูปอง</span>
+                            </button>
+                            <button class="quick-action-btn" id="orderHistoryBtn">
+                                <span class="action-icon">📋</span>
+                                <span data-th="ประวัติ" data-en="History">ประวัติ</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Voucher Section -->
+                    <div class="account-section voucher-section" id="voucherSection">
+                        <h4 data-th="คูปองของฉัน" data-en="My Vouchers">คูปองของฉัน</h4>
+                        <div class="voucher-list" id="voucherList">
+                            <!-- Vouchers will be populated here -->
+                        </div>
+                        <div class="voucher-input-section">
+                            <input type="text" class="input-field voucher-input" id="voucherCodeInput"
+                                data-placeholder-th="ใส่โค้ดคูปอง" data-placeholder-en="Enter voucher code"
+                                placeholder="ใส่โค้ดคูปอง">
+                            <button class="add-voucher-btn" id="addVoucherBtn" data-th="เพิ่ม"
+                                data-en="Add">เพิ่ม</button>
+                        </div>
+                    </div>
+
+                    <!-- Order History Section -->
+                    <div class="account-section order-history-section" id="orderHistorySection" style="display: none;">
+                        <h4 data-th="ประวัติการสั่งซื้อ" data-en="Order History">ประวัติการสั่งซื้อ</h4>
+                        <div class="order-history-list" id="orderHistoryList">
+                            <p class="empty-message" data-th="ยังไม่มีประวัติการสั่งซื้อ"
+                                data-en="No order history yet">ยังไม่มีประวัติการสั่งซื้อ</p>
+                        </div>
+                    </div>
+
+                    <!-- Redeem Points Section -->
+                    <div class="account-section redeem-section" id="redeemSection" style="display: none;">
+                        <h4 data-th="แลกแต้มเป็นส่วนลด" data-en="Redeem Points for Discount">แลกแต้มเป็นส่วนลด</h4>
+                        <p class="redeem-info" data-th="1 แต้ม = ส่วนลด ฿1" data-en="1 point = ฿1 discount">1 แต้ม =
+                            ส่วนลด ฿1</p>
+                        <div class="redeem-options">
+                            <button class="redeem-option" data-points="100">100 <span data-th="แต้ม"
+                                    data-en="pts">แต้ม</span> = ฿100</button>
+                            <button class="redeem-option" data-points="200">200 <span data-th="แต้ม"
+                                    data-en="pts">แต้ม</span> = ฿200</button>
+                            <button class="redeem-option" data-points="500">500 <span data-th="แต้ม"
+                                    data-en="pts">แต้ม</span> = ฿500</button>
+                        </div>
+                        <p class="redeem-note" data-th="*ใช้ได้ในคำสั่งซื้อถัดไป" data-en="*Valid for next order">
+                            *ใช้ได้ในคำสั่งซื้อถัดไป</p>
+                    </div>
+
+                    <!-- Member Tier Benefits -->
+                    <div class="account-section tier-benefits-section">
+                        <h4 data-th="สิทธิประโยชน์ตามระดับ" data-en="Tier Benefits">สิทธิประโยชน์ตามระดับ</h4>
+                        <div class="tier-benefits-list">
+                            <div class="tier-benefit-item bronze">
+                                <span class="tier-icon">🥉</span>
+                                <div class="tier-details">
+                                    <span class="tier-name">Bronze</span>
+                                    <span class="tier-multiplier" data-th="1x แต้ม" data-en="1x Points">1x แต้ม</span>
+                                </div>
+                            </div>
+                            <div class="tier-benefit-item silver">
+                                <span class="tier-icon">🥈</span>
+                                <div class="tier-details">
+                                    <span class="tier-name">Silver</span>
+                                    <span class="tier-multiplier" data-th="1.5x แต้ม" data-en="1.5x Points">1.5x
+                                        แต้ม</span>
+                                </div>
+                            </div>
+                            <div class="tier-benefit-item gold">
+                                <span class="tier-icon">🥇</span>
+                                <div class="tier-details">
+                                    <span class="tier-name">Gold</span>
+                                    <span class="tier-multiplier" data-th="2x แต้ม" data-en="2x Points">2x แต้ม</span>
+                                </div>
+                            </div>
+                            <div class="tier-benefit-item platinum">
+                                <span class="tier-icon">💎</span>
+                                <div class="tier-details">
+                                    <span class="tier-name">Platinum</span>
+                                    <span class="tier-multiplier" data-th="3x แต้ม" data-en="3x Points">3x แต้ม</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logout Button -->
+                    <button class="logout-btn" id="logoutBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        <span data-th="ออกจากระบบ" data-en="Logout">ออกจากระบบ</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Modal -->
+        <div class="modal-overlay search-modal" id="searchModal">
+            <div class="modal-content search-content">
+                <div class="modal-header">
+                    <h3 data-th="ค้นหาสินค้า" data-en="Search Products">ค้นหาสินค้า</h3>
+                    <button class="modal-close" id="closeSearchModal">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" class="search-input" id="searchInput"
+                            data-placeholder-th="ค้นหาเมนู ทริม สเต็ก..."
+                            data-placeholder-en="Search menu, trim, steak..." placeholder="ค้นหาเมนู ทริม สเต็ก..."
+                            autofocus>
+                        <button class="clear-search-btn" id="clearSearchBtn">×</button>
+                    </div>
+
+                    <!-- Quick Filters -->
+                    <div class="search-filters">
+                        <button class="filter-chip active" data-filter="all" data-th="ทั้งหมด"
+                            data-en="All">ทั้งหมด</button>
+                        <button class="filter-chip" data-filter="sashimi" data-th="ซาชิมิ"
+                            data-en="Sashimi">ซาชิมิ</button>
+                        <button class="filter-chip" data-filter="steak" data-th="สเต็ก" data-en="Steak">สเต็ก</button>
+                        <button class="filter-chip" data-filter="combo" data-th="ชุดเซ็ต"
+                            data-en="Sets">ชุดเซ็ต</button>
+                    </div>
+
+                    <!-- Search Results -->
+                    <div class="search-results" id="searchResults">
+                        <!-- Results will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order History Modal -->
+        <div class="modal-overlay history-modal" id="historyModal">
+            <div class="modal-content history-content">
+                <div class="modal-header">
+                    <h3 data-th="ประวัติการสั่งซื้อ" data-en="Order History">ประวัติการสั่งซื้อ</h3>
+                    <button class="modal-close" id="closeHistoryModal">×</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Summary Stats -->
+                    <div class="history-stats" id="historyStats">
+                        <div class="stat-card">
+                            <span class="stat-icon">📦</span>
+                            <span class="stat-value" id="totalOrdersCount">0</span>
+                            <span class="stat-label" data-th="ออเดอร์" data-en="Orders">ออเดอร์</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-icon">💰</span>
+                            <span class="stat-value" id="totalSpentAmount">฿0</span>
+                            <span class="stat-label" data-th="ยอดรวม" data-en="Total Spent">ยอดรวม</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-icon">⭐</span>
+                            <span class="stat-value" id="totalPointsEarned">0</span>
+                            <span class="stat-label" data-th="แต้มได้รับ" data-en="Points Earned">แต้มได้รับ</span>
+                        </div>
+                    </div>
+
+                    <!-- Order List -->
+                    <div class="history-list" id="historyList">
+                        <div class="empty-history" id="emptyHistory">
+                            <div class="empty-icon">📋</div>
+                            <p data-th="ยังไม่มีประวัติการสั่งซื้อ" data-en="No order history yet">
+                                ยังไม่มีประวัติการสั่งซื้อ</p>
+                            <span class="empty-hint" data-th="เริ่มสั่งซื้อเพื่อดูประวัติที่นี่"
+                                data-en="Start ordering to see your history here">เริ่มสั่งซื้อเพื่อดูประวัติที่นี่</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" id="navHome">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span data-th="หน้าแรก" data-en="Home">หน้าแรก</span>
+            </button>
+            <button class="nav-item" id="navSearch">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <span data-th="ค้นหา" data-en="Search">ค้นหา</span>
+            </button>
+            <button class="nav-item" id="navHistory">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <span data-th="ประวัติ" data-en="Orders">ประวัติ</span>
+            </button>
+            <button class="nav-item" id="navAccount">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span data-th="บัญชี" data-en="Account">บัญชี</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="api-client.js"></script>
+    <script src="order-system.js"></script>
+    <script src="member.js"></script>
+    <script src="delivery-system.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

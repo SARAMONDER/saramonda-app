@@ -4,6 +4,7 @@
  */
 const express = require('express');
 const http = require('http');
+const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -135,6 +136,28 @@ app.use(`${apiPrefix}/webhook`, require('./modules/notifications/routes'));
 // Set order service in app context for chatbot
 const orderService = require('./modules/orders/service');
 app.set('orderService', orderService);
+
+// ============================================
+// STATIC FILE SERVING (Frontend)
+// ============================================
+
+// Serve static files from 'public' folder
+app.use(express.static(path.join(__dirname, '../../public')));
+
+// Catch-all: Serve index.html for any non-API routes (SPA support)
+app.get('*', (req, res, next) => {
+    // Skip API routes
+    if (req.path.startsWith('/api') || req.path.startsWith('/webhook') || req.path === '/health') {
+        return next();
+    }
+
+    const indexPath = path.join(__dirname, '../../public/index.html');
+    res.sendFile(indexPath, (err) => {
+        if (err) {
+            next(); // If file not found, go to 404 handler
+        }
+    });
+});
 
 // ============================================
 // ERROR HANDLING

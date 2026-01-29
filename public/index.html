@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="th" data-lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Saramondā | Premium Salmon</title>
+    <meta name="description" content="Pre-order Premium Salmon Sashimi Grade SUP from Norway">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="mobile-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">鮭</div>
+                    <div class="logo-text">
+                        <h1>Saramondā</h1>
+                        <span class="tagline" data-th="ซาชิมิพรีเมียม" data-en="Premium Sashimi">ซาชิมิพรีเมียม</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="lang-btn" id="langBtn">
+                        <span class="lang-icon">🌐</span>
+                        <span class="lang-text" id="langText">EN</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-image">
+                <img src="images/hero.png" alt="Premium Salmon Sashimi"
+                    onerror="this.src='https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=300&fit=crop'">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="flag">🇳🇴</span>
+                    <span data-th="นำเข้าจากนอร์เวย์" data-en="Direct from Norway">นำเข้าจากนอร์เวย์</span>
+                </div>
+                <h2 class="hero-title">
+                    <span class="jp-text">新鮮なサーモン</span>
+                    <span class="main-text" data-th="แซลมอนสดใหม่" data-en="Fresh Salmon">แซลมอนสดใหม่</span>
+                </h2>
+                <p class="hero-subtitle" data-th="เกรดซาชิมิ SUP คุณภาพสูงสุด" data-en="SUP Grade Sashimi Quality">
+                    เกรดซาชิมิ SUP คุณภาพสูงสุด</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">❄️</span>
+                        <span class="feature-text" data-th="สดใหม่ 48 ชม." data-en="Fresh 48 hrs">สดใหม่ 48 ชม.</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✨</span>
+                        <span class="feature-text" data-th="เกรด SUP" data-en="SUP Grade">เกรด SUP</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🎌</span>
+                        <span class="feature-text" data-th="คุณภาพญี่ปุ่น" data-en="Japan Quality">คุณภาพญี่ปุ่น</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <main class="products-section" id="productsSection">
+            <!-- Sashimi Products -->
+            <div class="category-group active" data-category="sashimi">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span class="title-jp">刺身</span>
+                        <h3 data-th="ซาชิมิแซลมอน" data-en="Salmon Sashimi">ซาชิมิแซลมอน</h3>
+                    </div>
+                    <p class="section-desc" data-th="แล่สดใหม่ทุกวัน เกรด SUP พร้อมทาน"
+                        data-en="Fresh cut daily, SUP Grade, Ready to eat">
+                        แล่สดใหม่ทุกวัน เกรด SUP พร้อมทาน</p>
+                </div>
+
+                <!-- Salmon Sashimi -->
+                <div class="product-card has-sizes" data-product-id="salmon-sashimi">
+                    <div class="product-badge best" data-th="ขายดี" data-en="Best">ขายดี</div>
+                    <div class="product-image">
+                        <img src="images/trim-a.png" alt="Premium Salmon Sashimi" loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=300&fit=crop'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">サーモン刺身</span>
+                                <h4 data-th="แซลมอนซาชิมิ" data-en="Salmon Sashimi">แซลมอนซาชิมิ</h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="เนื้อนุ่มละมุน สีส้มสวย แล่สดใหม่ทุกวัน พร้อมทานเป็นซาชิมิ"
+                            data-en="Soft and tender, beautiful orange, fresh cut daily, ready for sashimi">
+                            เนื้อนุ่มละมุน สีส้มสวย แล่สดใหม่ทุกวัน พร้อมทานเป็นซาชิมิ</p>
+                        <div class="size-selector">
+                            <label class="size-option">
+                                <input type="radio" name="size-salmon-sashimi" value="300g" data-price="329">
+                                <span class="size-btn">
+                                    <span class="size-weight">300g</span>
+                                    <span class="size-price">฿329</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-salmon-sashimi" value="500g" data-price="519" checked>
+                                <span class="size-btn">
+                                    <span class="size-weight">500g</span>
+                                    <span class="size-price">฿519</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-salmon-sashimi" value="1kg" data-price="989">
+                                <span class="size-btn">
+                                    <span class="size-weight">1kg</span>
+                                    <span class="size-price">฿989</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">519</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fatty Cut Option -->
+                <div class="product-card has-sizes" data-product-id="salmon-fatty">
+                    <div class="product-badge value" data-th="พรีเมียม" data-en="Premium">พรีเมียม</div>
+                    <div class="product-image">
+                        <img src="images/trim-b.png" alt="Fatty Salmon Sashimi" loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=300&fit=crop'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <div class="product-titles">
+                                <span class="product-jp">大トロ</span>
+                                <h4 data-th="ซาชิมิส่วนท้อง (Fatty)" data-en="Fatty Cut Sashimi">ซาชิมิส่วนท้อง (Fatty)
+                                </h4>
+                            </div>
+                            <div class="product-grade">SUP</div>
+                        </div>
+                        <p class="product-desc" data-th="ส่วนท้องปลา เนื้อนุ่มละลายในปาก ไขมันแทรกสวย"
+                            data-en="Belly cut, melts in mouth, beautiful marbling">ส่วนท้องปลา เนื้อนุ่มละลายในปาก
+                            ไขมันแทรกสวย</p>
+                        <div class="size-selector">
+                            <label class="size-option">
+                                <input type="radio" name="size-salmon-fatty" value="300g" data-price="399">
+                                <span class="size-btn">
+                                    <span class="size-weight">300g</span>
+                                    <span class="size-price">฿399</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-salmon-fatty" value="500g" data-price="649" checked>
+                                <span class="size-btn">
+                                    <span class="size-weight">500g</span>
+                                    <span class="size-price">฿649</span>
+                                </span>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size-salmon-fatty" value="1kg" data-price="1249">
+                                <span class="size-btn">
+                                    <span class="size-weight">1kg</span>
+                                    <span class="size-price">฿1,249</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price">
+                                <span class="price-symbol">฿</span>
+                                <span class="price-value">649</span>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">−</button>
+                                <span class="qty-value">0</span>
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary" id="cartSummary">
+            <div class="cart-summary-content">
+                <div class="cart-info">
+                    <span class="cart-label" data-th="รายการ" data-en="items">รายการ</span>
+                    <span class="cart-total">฿<span id="totalPrice">0</span></span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">
+                    <span data-th="สั่งจองเลย" data-en="Pre-order Now">สั่งจองเลย</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Order Modal -->
+        <div class="modal-overlay" id="orderModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 data-th="ยืนยันการสั่งจอง" data-en="Confirm Pre-order">ยืนยันการสั่งจอง</h3>
+                    <button class="modal-close" id="closeModal">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="order-list" id="orderList"></div>
+                    <!-- Delivery Summary -->
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span data-th="รวมสินค้า" data-en="Subtotal">รวมสินค้า</span>
+                            <span id="modalSubtotal">฿0</span>
+                        </div>
+                        <div class="summary-row delivery-fee-row">
+                            <span data-th="ค่าจัดส่ง" data-en="Delivery">ค่าจัดส่ง</span>
+                            <span id="deliveryFeeDisplay" class="delivery-fee-value">฿40</span>
+                        </div>
+                        <!-- Free delivery hint -->
+                        <div class="free-delivery-hint" id="freeDeliveryHint" style="display: none;">
+                            <span class="hint-icon">💡</span>
+                            <span id="freeDeliveryText" data-th="เพิ่มอีก ฿X ส่งฟรี!"
+                                data-en="Add ฿X more for free delivery!">เพิ่มอีก ฿69 ส่งฟรี!</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span data-th="ยอดรวม" data-en="Total">ยอดรวม</span>
+                            <span id="modalTotal">฿0</span>
+                        </div>
+                    </div>
+
+                    <!-- Minimum Order Warning -->
+                    <div class="min-order-warning" id="minOrderWarning" style="display: none;">
+                        <span class="warning-icon">⚠️</span>
+                        <span data-th="ยอดขั้นต่ำ ฿199" data-en="Minimum order ฿199">ยอดขั้นต่ำ ฿199</span>
+                    </div>
+
+                    <!-- Delivery Date & Time Slot -->
+                    <div class="form-section">
+                        <h4 data-th="🚚 วันและเวลาจัดส่ง" data-en="🚚 Delivery Date & Time">🚚 วันและเวลาจัดส่ง</h4>
+
+                        <!-- Date Selection -->
+                        <div class="delivery-date-selector">
+                            <label class="delivery-option">
+                                <input type="radio" name="deliveryDate" value="tomorrow" checked>
+                                <span class="option-content">
+                                    <span class="option-label" data-th="พรุ่งนี้" data-en="Tomorrow">พรุ่งนี้</span>
+                                    <span class="option-date" id="tomorrowDate">28 ม.ค.</span>
+                                </span>
+                            </label>
+                            <label class="delivery-option">
+                                <input type="radio" name="deliveryDate" value="dayAfter">
+                                <span class="option-content">
+                                    <span class="option-label" data-th="มะรืนนี้" data-en="Day After">มะรืนนี้</span>
+                                    <span class="option-date" id="dayAfterDate">29 ม.ค.</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Time Slot Selection -->
+                        <h4 data-th="⏰ รอบจัดส่ง" data-en="⏰ Delivery Time" style="margin-top: 15px;">⏰ รอบจัดส่ง</h4>
+                        <div class="time-slot-selector single-slot" id="timeSlotSelector">
+                            <label class="time-slot-option selected-only">
+                                <input type="radio" name="timeSlot" value="EVENING" checked>
+                                <span class="slot-content">
+                                    <span class="slot-icon">🌆</span>
+                                    <span class="slot-info">
+                                        <span class="slot-time">16:00 - 20:00</span>
+                                        <span class="slot-label" data-th="รอบเย็น"
+                                            data-en="Evening Round">รอบเย็น</span>
+                                    </span>
+                                    <span class="slot-remaining" id="eveningRemaining">
+                                        <span class="remaining-count">15</span>
+                                        <span data-th="เหลือ" data-en="left">เหลือ</span>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Pre-order Info Badge -->
+                        <div class="preorder-info-badge">
+                            <span class="badge-icon">📦</span>
+                            <span data-th="สั่งจองล่วงหน้า ส่งช่วงเย็น"
+                                data-en="Pre-order now, Evening delivery">สั่งจองล่วงหน้า ส่งช่วงเย็น</span>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h4 data-th="ข้อมูลผู้สั่ง" data-en="Your Information">ข้อมูลผู้สั่ง</h4>
+                        <input type="text" class="input-field" id="customerName" data-placeholder-th="ชื่อ-นามสกุล"
+                            data-placeholder-en="Full Name" placeholder="ชื่อ-นามสกุล">
+                        <input type="tel" class="input-field" id="customerPhone" data-placeholder-th="เบอร์โทรศัพท์"
+                            data-placeholder-en="Phone Number" placeholder="เบอร์โทรศัพท์">
+                        <textarea class="input-field" id="customerAddress" data-placeholder-th="ที่อยู่จัดส่ง"
+                            data-placeholder-en="Delivery Address" placeholder="ที่อยู่จัดส่ง"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="confirm-btn" id="confirmOrder" data-th="ยืนยันการสั่งจอง"
+                        data-en="Confirm Pre-order">ยืนยันการสั่งจอง</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal-overlay success-modal" id="successModal">
+            <div class="modal-content success-content">
+                <div class="success-icon">✓</div>
+                <h3 data-th="สั่งจองสำเร็จ" data-en="Order Confirmed">สั่งจองสำเร็จ</h3>
+                <p data-th="ขอบคุณสำหรับการสั่งจอง เราจะติดต่อกลับภายใน 30 นาที"
+                    data-en="Thank you for your order. We will contact you within 30 minutes.">ขอบคุณสำหรับการสั่งจอง
+                    เราจะติดต่อกลับภายใน 30 นาที</p>
+
+                <!-- Add LINE OA Section -->
+                <div class="line-oa-invite" id="lineOaInvite">
+                    <div class="line-oa-divider">
+                        <span data-th="รับแจ้งเตือนสถานะ" data-en="Get order updates">รับแจ้งเตือนสถานะ</span>
+                    </div>
+                    <a href="https://line.me/R/ti/p/@096lomsu" target="_blank" class="add-line-btn" id="addLineBtn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
+                            <path
+                                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                        </svg>
+                        <span data-th="เพิ่มเพื่อน LINE รับโปรพิเศษ" data-en="Add LINE for exclusive offers">เพิ่มเพื่อน
+                            LINE รับโปรพิเศษ</span>
+                    </a>
+                    <p class="line-oa-hint" data-th="📱 รับแจ้งเตือนออเดอร์ + โปรโมชั่นพิเศษ"
+                        data-en="📱 Get order updates + exclusive promotions">📱 รับแจ้งเตือนออเดอร์ + โปรโมชั่นพิเศษ
+                    </p>
+                </div>
+
+                <button class="success-btn" id="closeSuccess" data-th="ตกลง" data-en="OK">ตกลง</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

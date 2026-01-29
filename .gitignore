@@ -1,44 +1,37 @@
 # Dependencies
 node_modules/
-package-lock.json
 
 # Environment
 .env
 .env.local
-.env.production
+.env.*.local
 
 # Database
 *.db
 *.sqlite
-data/
+database/*.db
 
 # Logs
 logs/
 *.log
 npm-debug.log*
 
-# Build
-dist/
-build/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
 # OS
 .DS_Store
 Thumbs.db
 
-# Backup
-backup/
-*.zip
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
 
-# Test
+# Build
+dist/
+build/
+
+# Coverage
 coverage/
-.jest/
 
-# Temp
-tmp/
-temp/
+# Backup
+backups/

@@ -142,7 +142,7 @@ app.set('orderService', orderService);
 // ============================================
 
 // Serve static files from 'public' folder
-app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../..')));
 
 // Catch-all: Serve index.html for any non-API routes (SPA support)
 app.get('*', (req, res, next) => {
@@ -151,7 +151,7 @@ app.get('*', (req, res, next) => {
         return next();
     }
 
-    const indexPath = path.join(__dirname, '../../public/index.html');
+    const indexPath = path.join(__dirname, '../../index.html');
     res.sendFile(indexPath, (err) => {
         if (err) {
             next(); // If file not found, go to 404 handler
